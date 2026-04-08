@@ -54,7 +54,7 @@ Compatible with: Python 3.12+, pandas 2.x, numpy 1.26+.
 
 from __future__ import annotations
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __date__    = "2026-04-08"
 
 import argparse

@@ -54,7 +54,7 @@ python batch_validation.py
 #   Single-Diode Parameters from Datasheet Data. Energy Reports.
 # ---------------------------------------------------------------------------
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __date__    = "2026-04-08"
 
 import matplotlib

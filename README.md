@@ -1,6 +1,6 @@
 # pvfit5 — Estimation of the Five Parameters of the PV Single-Diode Model
 
-**Version:** 1.0.0 | **Date:** 2026-04-08 | **Author:** Valerio Lo Brano
+**Version:** 1.1.0 | **Date:** 2026-04-08 | **Author:** Valerio Lo Brano
 
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 

@@ -60,7 +60,7 @@ Edit the CONFIGURATION section at the top to set file paths.
 
 from __future__ import annotations
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __date__    = "2026-04-08"
 
 import argparse
