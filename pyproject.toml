@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pvfit5"
+version = "1.0.0"
+description = "Estimate PV single-diode model parameters from module datasheet values"
+authors = [
+    { name = "Valerio Lo Brano" }
+]
+license = { text = "BSD-3-Clause" }
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = [
+    "photovoltaic", "solar energy", "single-diode model",
+    "parameter estimation", "genetic algorithm", "pvlib"
+]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "pvlib>=0.10",
+    "deap>=1.4",
+    "tqdm>=4.60",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "openpyxl>=3.1",
+    "xlsxwriter>=3.1",
+    "seaborn>=0.12",
+]
+
+[project.scripts]
+pvfit5 = "pvfit5.find_pv_parameters:main"
+
+[project.urls]
+Repository = "https://github.com/valerio-lobrano/pvfit5"
