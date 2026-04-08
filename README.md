@@ -130,6 +130,8 @@ The following Python packages are required and are installed automatically by
 
 ## Installation
 
+### Using pip
+
 **From PyPI:**
 ```bash
 pip install pvfit5
@@ -137,14 +139,42 @@ pip install pvfit5
 
 **From GitHub (latest development version):**
 ```bash
-pip install git+https://github.com/valerio-lobrano/pvfit5.git
+pip install git+https://github.com/valeriolobrano/pvfit5.git
 ```
 
 **For local development (editable install):**
 ```bash
-git clone https://github.com/valerio-lobrano/pvfit5.git
+git clone https://github.com/valeriolobrano/pvfit5.git
 cd pvfit5
 pip install -e .
+```
+
+### Using uv
+
+[uv](https://docs.astral.sh/uv/) is a fast Python package manager that can
+replace pip and virtualenv.
+
+**Add to an existing project:**
+```bash
+uv add pvfit5
+```
+
+**From GitHub:**
+```bash
+uv add git+https://github.com/valeriolobrano/pvfit5.git
+```
+
+**Run directly without installing (ephemeral):**
+```bash
+uvx --from pvfit5 pvfit5 --voc 36.3 --isc 8.19 --pmax 218.95 --vmp 29.0 --imp 7.55
+```
+
+**Create a new project with pvfit5:**
+```bash
+uv init my_pv_project
+cd my_pv_project
+uv add pvfit5
+uv run pvfit5 --voc 36.3 --isc 8.19 --pmax 218.95 --vmp 29.0 --imp 7.55
 ```
 
 ---
