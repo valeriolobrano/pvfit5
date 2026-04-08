@@ -42,4 +42,4 @@ dependencies = [
 pvfit5 = "pvfit5.find_pv_parameters:main"
 
 [project.urls]
-Repository = "https://github.com/valerio-lobrano/pvfit5"
+Repository = "https://github.com/valeriolobrano/pvfit5"

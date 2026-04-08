@@ -9,7 +9,7 @@ title: "pvfit5: Open and Reproducible Estimation of PV Single-Diode Parameters f
 version: 1.0.0
 date-released: "2026-04-08"
 license: BSD-3-Clause
-repository-code: "https://github.com/valerio-lobrano/pvfit5"
+repository-code: "https://github.com/valeriolobrano/pvfit5"
 keywords:
   - photovoltaic
   - single-diode model
