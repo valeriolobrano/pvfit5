@@ -91,7 +91,17 @@ The algorithm returns:
    errors.
 
 See [`example_output/Gruposolar_GS601456P-218.txt`](example_output/Gruposolar_GS601456P-218.txt)
-for a complete example.
+for a complete text output example.
+
+### Example plots
+
+**Graph 1 — Live adaptation** (updates during GA evolution, auto-closes):
+
+![Live adaptation: I–V curve vs PV module key points](images/live_adaptation.png)
+
+**Graph 2 — Final I–V curve** (publication-quality, stays open):
+
+![Final I–V curve at STC with fitted SDM parameters](images/iv_curve.png)
 
 ---
 
