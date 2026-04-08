@@ -1,0 +1,31 @@
+=== Single-Diode Parameter Extraction Summary ===
+=== Model: CEC ===
+Start time         : 2026-01-28 14:31:20
+End time           : 2026-01-28 14:31:36
+Runtime (mm:ss)    : 00:16
+GA generations     : 101 / 1500 (early stop)
+Population size    : 500
+Crossover prob     : 0.80
+Mutation prob      : 0.20
+Tournament size    : 3
+Workers (processes): 24
+
+-- PV module (STC) --
+ Voc*  = 36.30 V   Isc* = 8.19 A   Pmp* = 218.95 W
+ Vmp*  = 29.00 V   Imp* = 7.55 A
+
+-- Fitted parameters (best individual) --
+ alpha_sc (fixed) = 0.05  a_ref = 1.58767
+ I_L_ref  = 8.19 A  I_o_ref = 9.50718e-10 A
+ R_s      = 0.358825 Ω  R_sh = 453.125 Ω
+ nNsVth   = 1.58767 V
+
+-- SDM simulation vs PV module --
+ Voc(sim) = 36.305 V  |  Voc* = 36.300 V
+ Isc(sim) = 8.184 A  |  Isc* = 8.190 A
+ Vmp(sim) = 29.000 V  |  Vmp* = 29.000 V
+ Imp(sim) = 7.660 A  |  Imp* = 7.550 A
+ Pmp(sim) = 222.143 W  |  Pmp* = 218.950 W
+
+Total relative error (objective E): 2.204e-01
+===============================================
