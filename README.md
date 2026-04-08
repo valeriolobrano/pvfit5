@@ -3,6 +3,9 @@
 **Version:** 1.1.0 | **Date:** 2026-04-08 | **Author:** Valerio Lo Brano
 
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
+[![PyPI version](https://img.shields.io/pypi/v/pvfit5)](https://pypi.org/project/pvfit5/)
+[![Downloads](https://static.pepy.tech/badge/pvfit5)](https://pepy.tech/project/pvfit5)
+[![Python](https://img.shields.io/pypi/pyversions/pvfit5)](https://pypi.org/project/pvfit5/)
 
 **pvfit5** estimates the five parameters of the single-diode model (SDM) of a
 photovoltaic module at Standard Test Conditions (STC: 1000 W/m² irradiance,
