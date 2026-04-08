@@ -40,6 +40,9 @@ dependencies = [
 
 [project.scripts]
 pvfit5 = "pvfit5.find_pv_parameters:main"
+pvfit5-batch = "pvfit5.batch_validation:main"
+pvfit5-analysis = "pvfit5.analysis_results:main"
+pvfit5-parametric = "pvfit5.parametric_analysis:main"
 
 [project.urls]
 Repository = "https://github.com/valeriolobrano/pvfit5"

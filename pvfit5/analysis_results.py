@@ -63,6 +63,7 @@ from __future__ import annotations
 __version__ = "1.0.0"
 __date__    = "2026-04-08"
 
+import argparse
 import logging
 import os
 from pathlib import Path
@@ -383,6 +384,27 @@ def advanced_analysis(df: pd.DataFrame) -> None:
 
 def main() -> None:
     """Run the complete analysis pipeline (Part 1 + Part 2)."""
+    global EXCEL_FILE, RESULTS_EXCEL, RESULTS_TXT, SAVE_FIGURES
+
+    parser = argparse.ArgumentParser(
+        prog="pvfit5-analysis",
+        description="Statistical analysis of batch estimation results.",
+    )
+    parser.add_argument("input", nargs="?", default=EXCEL_FILE,
+                        help=f"Input Excel file (default: {EXCEL_FILE})")
+    parser.add_argument("--output-excel", default=RESULTS_EXCEL,
+                        help=f"Output Excel file (default: {RESULTS_EXCEL})")
+    parser.add_argument("--output-txt", default=RESULTS_TXT,
+                        help=f"Output text file (default: {RESULTS_TXT})")
+    parser.add_argument("--no-figures", action="store_true",
+                        help="Suppress PNG figure output")
+    args = parser.parse_args()
+
+    EXCEL_FILE = args.input
+    RESULTS_EXCEL = args.output_excel
+    RESULTS_TXT = args.output_txt
+    SAVE_FIGURES = not args.no_figures
+
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s | %(levelname)s | %(message)s",

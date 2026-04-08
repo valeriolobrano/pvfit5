@@ -57,6 +57,7 @@ from __future__ import annotations
 __version__ = "1.0.0"
 __date__    = "2026-04-08"
 
+import argparse
 import logging
 from pathlib import Path
 import pandas as pd
@@ -101,7 +102,7 @@ def compute_statistics(df: pd.DataFrame, value_col: str, group_col: str) -> pd.D
     return stats.reset_index()
 
 
-def main(input_file: str, output_file: str) -> None:
+def _run(input_file: str, output_file: str) -> None:
     """Perform the statistical analysis and export results to Excel.
 
     Args:
@@ -137,10 +138,24 @@ def main(input_file: str, output_file: str) -> None:
     logger.info("Analysis completed successfully.")
 
 
+def main() -> None:
+    """CLI entry point for parametric analysis."""
+    parser = argparse.ArgumentParser(
+        prog="pvfit5-parametric",
+        description="Per-technology statistics of RMSE and runtime.",
+    )
+    parser.add_argument("input", nargs="?",
+                        default="pv_batch_analysis_results_deep.xlsx",
+                        help="Input Excel file (default: pv_batch_analysis_results_deep.xlsx)")
+    parser.add_argument("--output", default="module_statistics.xlsx",
+                        help="Output Excel file (default: module_statistics.xlsx)")
+    args = parser.parse_args()
+    _run(args.input, args.output)
+
+
 if __name__ == "__main__":
     try:
-        # Example usage: adjust filenames as needed
-        main("20k.xlsx", "module_statistics.xlsx")
+        main()
     except Exception as e:
         logger.exception("Error during analysis: %s", e)
         raise

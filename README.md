@@ -242,26 +242,32 @@ Run the algorithm on a large set of modules from the pvlib CEC database:
 
 ```bash
 # Analyse 100 modules in alphabetical order
-python pvfit5/batch_validation.py -n 100 --selection alpha
+pvfit5-batch -n 100 --selection alpha
 
 # Analyse 200 random modules (reproducible with --seed)
-python pvfit5/batch_validation.py -n 200 --selection random --seed 42 --output my_results.xlsx
+pvfit5-batch -n 200 --selection random --seed 42 --output my_results.xlsx
 ```
 
-Results are saved to an Excel file.
+Results are saved to an Excel file. Run `pvfit5-batch --help` for all options.
 
 ---
 
 ## Analysing Batch Results (optional)
 
-After running `batch_validation.py`, analyse the output Excel file:
+After running `pvfit5-batch`, analyse the output Excel file:
 
 ```bash
-python pvfit5/analysis_results.py
+# Analyse the default output file
+pvfit5-analysis
+
+# Analyse a specific file
+pvfit5-analysis my_results.xlsx
+
+# Suppress figure output
+pvfit5-analysis my_results.xlsx --no-figures
 ```
 
-Edit the `CONFIGURATION` section at the top of the file to point to your Excel
-file. The script produces:
+The script produces:
 - PDF and CDF plots for RMSE and runtime.
 - Dominance analysis of partial errors.
 - `results_summary.xlsx` with descriptive statistics.
@@ -269,7 +275,10 @@ file. The script produces:
 For per-technology statistics:
 
 ```bash
-python pvfit5/parametric_analysis.py
+pvfit5-parametric
+
+# Or with a specific input and output file
+pvfit5-parametric my_results.xlsx --output my_statistics.xlsx
 ```
 
 ---
