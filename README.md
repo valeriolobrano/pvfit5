@@ -16,16 +16,22 @@ A genetic algorithm (DEAP) coupled with the CEC model implementation in
 errors on Voc, Isc, and Pmp, and reconstructs the full I–V curve via the
 Lambert W method.
 
-> If you use this software, please cite the article below.
-
 ---
 
-## Citation
+## Paper
 
 Lo Brano, V. (2026). *Open and Reproducible Estimation of PV Single-Diode
-Parameters from Datasheet Data*. **Energy Reports**.
+Parameters from Datasheet Data*. **Energy Reports** (Open Access, CC-BY).
+
+<!-- TODO: uncomment when available
+DOI: [10.xxxx/xxxxx](https://doi.org/10.xxxx/xxxxx)
+
+Full text: [pvfit5_paper.pdf](pvfit5_paper.pdf)
+-->
 
 See also [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
+
+> If you use this software in your research, please cite the article above.
 
 ---
 
