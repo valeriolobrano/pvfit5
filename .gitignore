@@ -29,7 +29,6 @@ Thumbs.db:encryptable
 .DS_Store
 
 # Internal development files
-CLAUDE.md
 docs/superpowers/
 
 # Test

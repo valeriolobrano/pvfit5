@@ -3,8 +3,8 @@
 **Version:** 1.1.0 | **Date:** 2026-04-08 | **Author:** Valerio Lo Brano
 
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
-[![TestPyPI version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Ftest.pypi.org%2Fpypi%2Fpvfit5%2Fjson&query=%24.info.version&label=TestPyPI)](https://test.pypi.org/project/pvfit5/)
-[![Python](https://img.shields.io/badge/python-%E2%89%A53.10-blue)](https://test.pypi.org/project/pvfit5/)
+[![PyPI version](https://img.shields.io/pypi/v/pvfit5)](https://pypi.org/project/pvfit5/)
+[![Python](https://img.shields.io/pypi/pyversions/pvfit5)](https://pypi.org/project/pvfit5/)
 
 **pvfit5** estimates the five parameters of the single-diode model (SDM) of a
 photovoltaic module at Standard Test Conditions (STC: 1000 W/m² irradiance,
@@ -136,9 +136,9 @@ The following Python packages are required and are installed automatically by
 
 ### Using pip
 
-**From TestPyPI:**
+**From PyPI:**
 ```bash
-pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ pvfit5
+pip install pvfit5
 ```
 
 **From GitHub (latest development version):**
@@ -158,9 +158,9 @@ pip install -e .
 [uv](https://docs.astral.sh/uv/) is a fast Python package manager that can
 replace pip and virtualenv.
 
-**Add to an existing project (from TestPyPI):**
+**Add to an existing project:**
 ```bash
-uv add --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ pvfit5
+uv add pvfit5
 ```
 
 **From GitHub:**
@@ -170,7 +170,7 @@ uv add git+https://github.com/valeriolobrano/pvfit5.git
 
 **Run directly without installing (ephemeral):**
 ```bash
-uvx --index-url https://test.pypi.org/simple/ --from pvfit5 pvfit5 \
+uvx --from pvfit5 pvfit5 \
     --voc 36.3 --isc 8.19 --pmax 218.95 --vmp 29.0 --imp 7.55
 ```
 
@@ -178,7 +178,7 @@ uvx --index-url https://test.pypi.org/simple/ --from pvfit5 pvfit5 \
 ```bash
 uv init my_pv_project
 cd my_pv_project
-uv add --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ pvfit5
+uv add pvfit5
 uv run pvfit5 --voc 36.3 --isc 8.19 --pmax 218.95 --vmp 29.0 --imp 7.55
 ```
 
