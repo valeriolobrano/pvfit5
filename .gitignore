@@ -3,6 +3,10 @@
 *.xls
 *.csv
 *.db
+*.txt
+!example_output/*.txt
+*.pdf
+results_summary.*
 
 # Python build artefacts
 __pycache__/
@@ -21,7 +25,12 @@ env/
 
 # OS
 Thumbs.db
+Thumbs.db:encryptable
 .DS_Store
+
+# Internal development files
+CLAUDE.md
+docs/superpowers/
 
 # Test
 test/

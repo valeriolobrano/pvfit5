@@ -32,6 +32,7 @@
 #
 #   Lo Brano, V. (2026). Open and Reproducible Estimation of PV
 #   Single-Diode Parameters from Datasheet Data. Energy Reports.
+#   https://doi.org/10.1016/j.egyr.2026.109280
 # ---------------------------------------------------------------------------
 """
 analysis_results.py — Statistical analysis of batch estimation results.
