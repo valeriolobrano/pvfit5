@@ -6,6 +6,7 @@
 *.txt
 !example_output/*.txt
 *.pdf
+!paper/*.pdf
 results_summary.*
 
 # Python build artefacts
@@ -33,6 +34,11 @@ docs/superpowers/
 
 # Test
 test/
+
+# Secrets
+.pypirc
+.env
+*.token
 
 # IDE
 .vscode/

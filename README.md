@@ -1,6 +1,6 @@
 # pvfit5 — Estimation of the Five Parameters of the PV Single-Diode Model
 
-**Version:** 1.1.1 | **Date:** 2026-04-16 | **Author:** Valerio Lo Brano
+**Version:** 1.1.4 | **Date:** 2026-04-21 | **Author:** Valerio Lo Brano
 
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 [![PyPI version](https://img.shields.io/pypi/v/pvfit5)](https://pypi.org/project/pvfit5/)
@@ -23,6 +23,8 @@ Lo Brano, V. (2026). *Open and Reproducible Estimation of PV Single-Diode
 Parameters from Datasheet Data*. **Energy Reports** (Open Access, CC-BY).
 
 DOI: [10.1016/j.egyr.2026.109280](https://doi.org/10.1016/j.egyr.2026.109280)
+
+A copy of the paper is included in this repository: [`paper/LoBrano2026_EnergyReports.pdf`](paper/LoBrano2026_EnergyReports.pdf)
 
 See also [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
 
@@ -101,11 +103,11 @@ for a complete text output example.
 
 **Graph 1 — Live adaptation** (updates during GA evolution, auto-closes):
 
-![Live adaptation: I–V curve vs PV module key points](images/live_adaptation.png)
+![Live adaptation: I–V curve vs PV module key points](https://raw.githubusercontent.com/valeriolobrano/pvfit5/master/images/live_adaptation.png)
 
 **Graph 2 — Final I–V curve** (publication-quality, stays open):
 
-![Final I–V curve at STC with fitted SDM parameters](images/iv_curve.png)
+![Final I–V curve at STC with fitted SDM parameters](https://raw.githubusercontent.com/valeriolobrano/pvfit5/master/images/iv_curve.png)
 
 ---
 
