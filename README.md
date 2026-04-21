@@ -1,6 +1,6 @@
 # pvfit5 — Estimation of the Five Parameters of the PV Single-Diode Model
 
-**Version:** 1.1.4 | **Date:** 2026-04-21 | **Author:** Valerio Lo Brano
+**Version:** 1.1.5 | **Date:** 2026-04-21 | **Author:** Valerio Lo Brano
 
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 [![PyPI version](https://img.shields.io/pypi/v/pvfit5)](https://pypi.org/project/pvfit5/)
@@ -24,7 +24,7 @@ Parameters from Datasheet Data*. **Energy Reports** (Open Access, CC-BY).
 
 DOI: [10.1016/j.egyr.2026.109280](https://doi.org/10.1016/j.egyr.2026.109280)
 
-A copy of the paper is included in this repository: [`paper/LoBrano2026_EnergyReports.pdf`](paper/LoBrano2026_EnergyReports.pdf)
+A copy of the paper is included in this repository: [`paper/LoBrano2026_EnergyReports.pdf`](https://github.com/valeriolobrano/pvfit5/raw/master/paper/LoBrano2026_EnergyReports.pdf)
 
 See also [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
 
