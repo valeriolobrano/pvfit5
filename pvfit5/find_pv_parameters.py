@@ -294,7 +294,7 @@ def _didv_sdm_at_v(v: float,
 # --------------------------- Fitness function --------------------------------
 
 def evaluate_sdm(individual: Sequence[float], nd: PVModuleData, stc: STC) -> tuple[float]:
-    """Compute the GA objective: sum of relative errors on {Voc, Isc, Pmp}."""
+    """Compute the GA objective: weighted sum of relative errors on Voc, Isc, Vmp, Imp plus stationarity at Vmp."""
     try:
         a_ref, I_L_ref, I_o_ref, R_s, R_sh = individual
         if R_sh <= 0 or R_s <= 0 or I_L_ref <= 0 or I_o_ref <= 0 or a_ref <= 0:
@@ -408,7 +408,7 @@ def _update_graph1_live(ax, line, individual, stc: STC) -> None:
         logging.debug("Live plot update failed: %s", exc)
 
 
-def _final_plot(v: np.ndarray, i: np.ndarray, nd: PVModuleData, final_error: float, module_name: str):
+def _final_plot(v: np.ndarray, i: np.ndarray, nd: PVModuleData, final_error: float, module_name: str, res: dict):
     """Create Graph 2 (final I–V plot) and return the figure handle.
 
     Args:
@@ -417,11 +417,15 @@ def _final_plot(v: np.ndarray, i: np.ndarray, nd: PVModuleData, final_error: flo
         nd: PV module nameplate data.
         final_error: Final objective value.
         module_name: Name of the PV module.
+        res: singlediode result dict with fitted v_mp, i_mp, v_oc, i_sc.
     """
     fig = plt.figure(figsize=(10, 6))
     ax = fig.add_subplot(111)
     ax.plot([0.0, nd.vmp, nd.voc], [nd.isc, nd.imp, 0.0],
-            marker="o", linestyle="", label="PV module key points")
+            marker="o", linestyle="", markersize=8, label="Datasheet key points")
+    ax.plot(float(res["v_mp"]), float(res["i_mp"]),
+            marker="s", color="green", markersize=8, zorder=5,
+            label=f"Fitted MPP ({float(res['v_mp']):.2f} V, {float(res['i_mp']):.2f} A)")
     ax.plot(v, i, "r-", label="Single-diode fit (extracted parameters)")
     ax.set_xlabel("Voltage (V)")
     ax.set_ylabel("Current (A)")
@@ -657,7 +661,7 @@ def fit_parameters(nd: PVModuleData, stc: STC, ga: GAConfig, module_name: str,
             pass
 
     # Graph 2: final plot (kept open)
-    fig2 = _final_plot(v, i, nd, final_error, module_name)
+    fig2 = _final_plot(v, i, nd, final_error, module_name, res)
     try:
         plt.ioff()   # ensure the final show() blocks and Graph 2 remains open
     except Exception:

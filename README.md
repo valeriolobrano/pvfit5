@@ -1,6 +1,6 @@
 # pvfit5 — Estimation of the Five Parameters of the PV Single-Diode Model
 
-**Version:** 1.1.5 | **Date:** 2026-04-21 | **Author:** Valerio Lo Brano
+**Version:** 1.2.0 | **Date:** 2026-04-23 | **Author:** Valerio Lo Brano
 
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 [![PyPI version](https://img.shields.io/pypi/v/pvfit5)](https://pypi.org/project/pvfit5/)
@@ -11,8 +11,9 @@ photovoltaic module at Standard Test Conditions (STC: 1000 W/m² irradiance,
 25 °C cell temperature) using only commercial datasheet values.
 
 A genetic algorithm (DEAP) coupled with the CEC model implementation in
-[pvlib](https://pvlib-python.readthedocs.io/) minimises the sum of relative
-errors on Voc, Isc, and Pmp, and reconstructs the full I–V curve via the
+[pvlib](https://pvlib-python.readthedocs.io/) minimises a weighted combination
+of relative errors on Voc, Isc, Vmp, and Imp — plus a stationarity constraint
+at the maximum power point — and reconstructs the full I–V curve via the
 Lambert W method.
 
 ---
@@ -87,12 +88,12 @@ The algorithm returns:
    at STC, which fully characterise the PV module.
 2. **Simulated key points** (Voc, Isc, Vmp, Imp, Pmp from the fitted model)
    compared against the datasheet values.
-3. **Total relative error** — the objective function value (lower is better):
-   ```
-   E = |Voc_sim − Voc*|/Voc* + |Isc_sim − Isc*|/Isc* + |Pmp_sim − Pmp*|/Pmp*
-   ```
+3. **Total relative error** — the weighted objective function value (lower is
+   better), including individual errors on Voc, Isc, Vmp, Imp, and a
+   stationarity residual at the maximum power point.
 4. **I–V curve plot** — a publication-quality figure showing the reconstructed
-   curve with the datasheet key points annotated.
+   curve with both the datasheet key points and the fitted maximum power point,
+   so any discrepancy is immediately visible.
 5. **Summary text file** — `<MODULE_NAME>_CEC.txt` with all parameters and
    errors.
 

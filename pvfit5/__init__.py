@@ -36,7 +36,7 @@
 # ---------------------------------------------------------------------------
 """pvfit5 — PV single-diode five-parameter estimation from datasheet data."""
 
-__version__ = "1.1.5"
-__date__    = "2026-04-21"
+__version__ = "1.2.0"
+__date__    = "2026-04-23"
 __author__  = "Valerio Lo Brano"
 __license__ = "BSD-3-Clause"
